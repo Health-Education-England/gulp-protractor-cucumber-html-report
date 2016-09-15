@@ -10,19 +10,22 @@ app.navigation  = (function () {
         steps = document.querySelectorAll('.step'),
         displayChartButton = document.querySelector('.btn_chart');
 
+
       this.bindEvents(errors, scenarios, filteringButtons, displayChartButton);
       this.bindFilterButtonsEvent(filteringButtons, scenarios, steps);
-    },
-  /** Showing error log  for step that failed */
-    showErrorDetails: function (e) {
-        e.stopPropagation();
-        var display = this.querySelector('.error-details').style.display;
+      displayChartButton.click();
 
-        if (display === 'block') {
-          this.querySelector('.error-details').style.display = 'none';
-        } else {
-          this.querySelector('.error-details').style.display = 'block';
-        }
+    },
+    /** Showing error log  for step that failed */
+    showErrorDetails: function (e) {
+      e.stopPropagation();
+      var display = this.querySelector('.error-details').style.display;
+
+      if (display === 'block') {
+        this.querySelector('.error-details').style.display = 'none';
+      } else {
+        this.querySelector('.error-details').style.display = 'block';
+      }
     },
     /** Hiding and displaying steps after clicking on scenario header*/
     toggleStep: function () {
@@ -162,5 +165,4 @@ app.navigation  = (function () {
     }
   }
 
-}());
-
+}());/**/
